@@ -1,6 +1,0 @@
-[submodule "density"]
-	path = third_party/density
-	url = https://github.com/busFred/density.git
-[submodule "third_party/hydra-torch"]
-	path = third_party/hydra-torch
-	url = https://github.com/pytorch/hydra-torch.git
