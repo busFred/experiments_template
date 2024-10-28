@@ -1,11 +1,11 @@
 import csv
 import os
 from typing import Literal
-import datasets.common
+import my_datasets.common
 
 
 def load_template_dataset(dataset_type: Literal["train", "test", "val"]):
-    datasets_root_dir: str = datasets.common.get_datasets_files_root_dir()
+    datasets_root_dir: str = my_datasets.common.get_datasets_files_root_dir()
     dataset_p: str = os.path.join(datasets_root_dir, "template", f"{dataset_type}.csv")
     dataset: list[dict[str, str]] = list()
     with open(dataset_p, "r") as f:
