@@ -1,6 +1,6 @@
 import setuptools
 
 setuptools.setup(
-    name="exp_datasets",
+    name="mydatasets",
     package_dir={"": "_python",},
 )
