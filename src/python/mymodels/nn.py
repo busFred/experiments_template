@@ -2,7 +2,8 @@ from __future__ import annotations
 
 import logging
 import math
-from typing import Callable, Optional, Sequence, Type, TypeVar
+from collections.abc import Callable, Sequence
+from typing import Optional, TypeVar
 
 import torch as th
 import torchinfo as thinfo
@@ -37,8 +38,8 @@ def make_fcn(
     layer_specs: Sequence[
         tuple[
             int,
-            Optional[Type[th.nn.Module] | Callable[[int], th.nn.Module]],
-            Optional[Type[th.nn.Module] | Callable[[], th.nn.Module]],
+            Optional[type[th.nn.Module] | Callable[[int], th.nn.Module]],
+            Optional[type[th.nn.Module] | Callable[[], th.nn.Module]],
             Optional[float],
         ]
     ],
@@ -48,7 +49,7 @@ def make_fcn(
     Args:
         nnet_in_features (int): input feature size of the FCN
         nnet_out_features (int): output feature size of the FCN
-        layer_specs (Sequence[ tuple[ int, Optional[Type[th.nn.Module]  |  Callable[[int], th.nn.Module]], Optional[Type[th.nn.Module]  |  Callable[[], th.nn.Module]], ] ]): a sequence of (hidden_size, make_norm_func, make_activation_func, dropout_p)
+        layer_specs (Sequence[ tuple[ int, Optional[type[th.nn.Module]  |  Callable[[int], th.nn.Module]], Optional[type[th.nn.Module]  |  Callable[[], th.nn.Module]], ] ]): a sequence of (hidden_size, make_norm_func, make_activation_func, dropout_p)
 
     Returns:
         th.nn.Sequential: the fully connected layer

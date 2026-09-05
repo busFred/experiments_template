@@ -1,15 +1,8 @@
 from __future__ import annotations
 
 import os
-from dataclasses import dataclass
 
 import mylib
-
-
-@dataclass
-class DatasetConf:
-    _target_: str
-    dataset_type: str
 
 
 def get_datasets_files_root_dir() -> str:
