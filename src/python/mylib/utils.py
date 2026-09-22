@@ -35,3 +35,22 @@ def get_project_root_dir() -> str:
         Absolute path to the project root.
     """
     return os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+
+
+def to_abs_path(s: str) -> str:
+    """Convert a path string to an absolute path.
+
+    If `s` is already an absolute path, it is returned unchanged.
+    Otherwise, it is interpreted as relative to the project root directory.
+
+    Parameters
+    ----------
+    s : str
+        Path string, either absolute or relative to the project root.
+
+    Returns
+    -------
+    str
+        Absolute path corresponding to `s`.
+    """
+    return s if os.path.isabs(s) else os.path.join(get_project_root_dir(), s)
