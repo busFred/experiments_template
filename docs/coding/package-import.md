@@ -1,4 +1,4 @@
-# Package Import Abbreviations
+****# Package Import Abbreviations
 
 Coding convention for `import ... as ...` aliases, as used in the skyscapes-playground repository.
 
@@ -47,6 +47,8 @@ thv_tfmsv2.Compose([...])
 
 | Import | Alias |
 |---|---|
+| `pickle` | `pkl` |
+| `tempfile` | `tmpf` |
 | `hydra` | `hd` |
 | `omegaconf` | `omgcf` |
 | `torch` | `th` |
@@ -70,6 +72,11 @@ thv_tfmsv2.Compose([...])
 ## Example
 
 ```python
+import pickle as pkl
+import tempfile as tmpf
+from dataclasses import dataclass
+from typing import Any
+
 import lightning as pl
 import lightning.fabric.loggers as plf_loggers
 import matplotlib.pyplot as plt

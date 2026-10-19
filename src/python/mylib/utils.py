@@ -12,7 +12,10 @@ def add_prefix_to_dict(
     Parameters
     ----------
     d : dict[str, Any]
-        A dictionary.
+        A dictionary with keys:
+        - `"<key>"` (`Any`): arbitrary key-value pairs; every key `k` is a
+          string to which `prefix` and `sep` are prepended, with value `v`
+          carried over unchanged.
     prefix : str
         Prefix to be prepended to each key.
     sep : str, optional
@@ -21,7 +24,9 @@ def add_prefix_to_dict(
     Returns
     -------
     dict[str, Any]
-        New dictionary with `prefix` prepended to each key of `d`.
+        New dictionary with keys:
+        - `f"{prefix}{sep}{k}"` (`Any`): value `v` of each key-value pair
+          `(k, v)` in `d`, stored under the prefixed key.
     """
     return {f"{prefix}{sep}{k}": v for k, v in d.items()}
 
